@@ -1,0 +1,21 @@
+{
+    "name": "sebrogala/xsv-translate",
+    "description": "Zend Expressive Translation Module",
+    "type": "library",
+    "homepage": "https://github.com/SebRogala/xsv-translate",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Sebastian Rogala",
+            "homepage": "http://sebrogala.com/"
+        }
+    ],
+    "require": {
+        "sebrogala/xsv-doctrine": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xsv\\Translate\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<doctrine-mapping>
+    <entity name="Xsv\Translate\DomainShared\Entity\Translation" table="translations">
+        <id name="id" type="uuid" />
+        <field name="resourceName" column="resource_name" type="string" length="30" />
+        <field name="resourceId" column="resource_id" type="uuid" />
+        <field name="locale" type="string" length="7" />
+        <field name="content" type="text" />
+    </entity>
+</doctrine-mapping>

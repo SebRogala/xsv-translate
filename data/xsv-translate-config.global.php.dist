@@ -1,0 +1,12 @@
+<?php
+
+return [
+    'xsv-translate' => [
+        'default-locale' => 'en_GB',
+        'locales-conversion' => [
+            "pl" => "pl_PL",
+            "en" => "en_GB",
+            "en_US" => "en_GB"
+        ]
+    ],
+];
