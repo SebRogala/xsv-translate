@@ -22,11 +22,15 @@ class Translator
     /** @var TranslatorAdapter */
     private static $adapter;
 
-    public static function init(Locale $preferableLocale, Locale $appDefaultLocale, TranslatorAdapter $adapter)
+    /** @var array */
+    private static $translationKeys;
+
+    public static function init(Locale $preferableLocale, Locale $appDefaultLocale, TranslatorAdapter $adapter, array $translationKeys = [])
     {
         self::$preferableLocale = $preferableLocale;
         self::$adapter = $adapter;
         self::$appDefaultLocale = $appDefaultLocale;
+        self::$translationKeys = $translationKeys;
     }
 
     public static function translate(string $resourceName, string $resourceId, $defaultTranslationContent = "")
@@ -43,6 +47,11 @@ class Translator
         }
 
         return $translation->getContent();
+    }
+
+    public static function getTranslationKeys()
+    {
+        return self::$translationKeys;
     }
 
     public static function addTranslation($resourceName, $resourceId, Locale $locale, $content)

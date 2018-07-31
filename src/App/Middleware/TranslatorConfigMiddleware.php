@@ -40,10 +40,11 @@ class TranslatorConfigMiddleware implements MiddlewareInterface
     {
         $preferableLocale = $this->getPreferableLocale($request);
         $defaultLocale = new Locale((string)$this->config->getConfig("xsv-translate", "default-locale"));
+        $translationKeys = $this->config->getConfig("translation-keys");
 
         $locale = empty($preferableLocale) ? clone $defaultLocale : new Locale($preferableLocale);
 
-        Translator::init($locale, $defaultLocale, $this->translatorAdapter);
+        Translator::init($locale, $defaultLocale, $this->translatorAdapter, $translationKeys);
 
         return $handler->handle($request);
     }
