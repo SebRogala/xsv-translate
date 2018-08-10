@@ -31,7 +31,7 @@ class ConfigProvider
             'doctrine' => [
                 EntityManager::class => [
                     'entity-path' => [
-                        __DIR__ . "/../doctrine-xml-mapping"
+                        dirname(__FILE__, 2) . "/doctrine-xml-mapping"
                     ],
                 ],
             ],
